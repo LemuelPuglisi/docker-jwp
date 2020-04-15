@@ -7,7 +7,7 @@ ls ./
 ./manage.py migrate
 # RUN ./manage.py createsuperuser
 # echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'pass')" | python manage.py shell
-echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'pass')" | python manage.py shell
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('${JWP_NAME}', '${JWP_EMAIL}', '${JWP_PASS}')" | python manage.py shell
 ./manage.py collectstatic --noinput
 
 exec "$@"
